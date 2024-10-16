@@ -2,8 +2,14 @@ package papers;
 
 public class Journal extends Paper{
     private int numberOfArticles;
-    public Journal(String name, String author, int year, String type, int numberOfArticles) {
-        super(name, author, year, type);
+    public Journal(String name, String author, int year, int numberOfArticles) {
+        super(name, author, year);
+        super.type = "Journal";
+        this.numberOfArticles = numberOfArticles;
+    }
+    public Journal(int inventoryNumber, String name, String author, int year, int numberOfArticles) {
+        super(inventoryNumber, name, author, year);
+        super.type = "Journal";
         this.numberOfArticles = numberOfArticles;
     }
 

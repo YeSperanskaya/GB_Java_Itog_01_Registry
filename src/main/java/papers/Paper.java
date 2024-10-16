@@ -10,12 +10,18 @@ public abstract class Paper {
     protected int year;
     protected String type;
 
-    public Paper(String name, String author, int year, String type) {
+    public Paper(String name, String author, int year) {
         this.inventoryNumber = createInventoryNumber();
         this.name = name;
         this.author = author;
         this.year = year;
-        this.type = type;
+    }
+
+    public Paper(int inventoryNumber, String name, String author, int year) {
+        this.inventoryNumber = inventoryNumber;
+        this.name = name;
+        this.author = author;
+        this.year = year;
     }
 
     private int createInventoryNumber() {
@@ -29,9 +35,7 @@ public abstract class Paper {
         return inventoryNumber;
     }
 
-    public void setInventoryNumber(int inventoryNumber) {
-        this.inventoryNumber = inventoryNumber;
-    }
+
 
     public String getName() {
         return name;
@@ -70,20 +74,19 @@ public abstract class Paper {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Paper paper = (Paper) o;
-        return year == paper.year && Objects.equals(name, paper.name) && Objects.equals(author, paper.author);
+        return inventoryNumber == paper.inventoryNumber;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, author, year);
+        return Objects.hash(inventoryNumber);
     }
-
 
     @Override
     public String toString() {
         return "Инвентарный номер: " + inventoryNumber +
-                ", наименование: " + name + '\'' +
-                ", автор: " + author + '\'' +
+                ", наименование: " + name +
+                ", автор: " + author +
                 ", год: " + year +
                 ", тип: " + type + ", ";
     }

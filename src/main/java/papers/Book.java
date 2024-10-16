@@ -4,8 +4,15 @@ public class Book extends Paper{
     private int numberOfPages;
 
 
-    public Book(String name, String author, int year, int numberOfPages, String type) {
-        super(name, author, year, type);
+    public Book(String name, String author, int year, int numberOfPages) {
+        super(name, author, year);
+        super.type = "Book";
+        this.numberOfPages = numberOfPages;
+    }
+
+    public Book(int inventoryNumber, String name, String author, int year, int numberOfPages) {
+        super(inventoryNumber, name, author, year);
+        super.type = "Book";
         this.numberOfPages = numberOfPages;
     }
 

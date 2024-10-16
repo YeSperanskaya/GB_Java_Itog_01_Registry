@@ -1,5 +1,7 @@
 package registry;
 
+import papers.Book;
+
 import java.util.Random;
 
 /**
@@ -15,6 +17,7 @@ import java.util.Random;
  */
 public class Main {
     public static void main(String[] args) {
-
+        Book book = new Book("Ton", "Пушкин", 1835, 25);
+        System.out.println(book);
     }
 }
