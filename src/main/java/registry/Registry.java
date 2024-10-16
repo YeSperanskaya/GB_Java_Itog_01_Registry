@@ -62,6 +62,10 @@ public class Registry {
         }
     }
 
+    public void print() {
+        print(arrayList);
+    }
+
 
 
 

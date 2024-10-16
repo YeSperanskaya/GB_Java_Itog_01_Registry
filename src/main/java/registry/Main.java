@@ -1,6 +1,9 @@
 package registry;
 
 import papers.Book;
+import papers.Journal;
+import papers.Letter;
+import papers.Microfilm;
 
 import java.util.Random;
 
@@ -17,7 +20,35 @@ import java.util.Random;
  */
 public class Main {
     public static void main(String[] args) {
-        Book book = new Book("Ton", "Пушкин", 1835, 25);
-        System.out.println(book);
+        Book book = new Book(1, "Ton", "Пушкин", 1835, 25);
+        Journal journal = new Journal(2, "Наука и жизнь", "Shildt", 2024, 6);
+        Letter letter = new Letter(3, "about work", "Masha", 2023, "Pete");
+        Microfilm microfilm = new Microfilm(4,"IOS", "Masha", 2001, 30);
+
+        Registry registry = new Registry();
+        registry.add(book);
+        registry.add(journal);
+        registry.add(letter);
+        registry.add(microfilm);
+
+        System.out.println("Вывод на печать всех имеющихся объектов: ");
+        registry.print();
+        System.out.println();
+
+        System.out.println("Поиск по автору Masha");
+        registry.findPaper("Masha");
+        System.out.println();
+        System.out.println("Поиск по автору Pit");
+        registry.findPaper("Pit");
+        System.out.println();
+
+        System.out.println("Поиск по инвернатрому номеру 2");
+        registry.findPaper(2);
+        System.out.println();
+        System.out.println("Поиск по несуществующему инвернатрому номеру 9");
+        registry.findPaper(9);
+        System.out.println();
+
+
     }
 }
