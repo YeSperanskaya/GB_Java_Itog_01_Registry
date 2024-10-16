@@ -1,5 +1,7 @@
 package registry;
 
+import java.util.Random;
+
 /**
  * Вы реализуете библиотечный реестр - абстракция предназначенная для описания библиотечного фонда муниципалитета
  * вашего города. В этом фонде хранятся разные объекты: книги, журналы, письма, микрофильмы и т.д.
@@ -13,6 +15,6 @@ package registry;
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
     }
 }
